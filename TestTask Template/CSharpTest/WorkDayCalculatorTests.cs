@@ -49,7 +49,7 @@ namespace CSharpTest
             Assert.IsTrue(result.Equals(new DateTime(2017, 4, 28)));
         }
         [TestMethod]
-        public void TestNegativeDayCount()
+        public void Test_WhenNegativeDayCount_ThenThrowArgumentExceptio()
         {
             DateTime startDate = new DateTime(2017, 4, 21);
             int count = -1;
@@ -67,8 +67,63 @@ namespace CSharpTest
                 StringAssert.Contains(e.Message, "dayCount can not be negative");
                 return;
             }
-
         }
+        [TestMethod]
+        public void Test_StartWeekendBeforeStartDateAndEndWeekendAfterStartDate()
+        {
+            DateTime startDate = new DateTime(2017, 4, 21);
+            int count = 5;
+            WeekEnd[] weekends = new WeekEnd[]
+            {
+                new WeekEnd(new DateTime(2017, 4, 15), new DateTime(2017, 4, 16)),
+                new WeekEnd(new DateTime(2017, 4, 19), new DateTime(2017, 4, 22))
+            };
 
+            DateTime result = new WorkDayCalculator().Calculate(startDate, count, weekends);
+
+            Assert.AreEqual( new DateTime(2017, 4, 27),result);
+        }
+        [TestMethod]
+        public void Test_StartWeekendIsEqualToStartDate()
+        {
+            DateTime startDate = new DateTime(2017, 4, 10);
+            int count = 5;
+            WeekEnd[] weekends = new WeekEnd[]
+            {
+                new WeekEnd(new DateTime(2017, 4, 10), new DateTime(2017, 4, 15))
+            };
+
+            DateTime result = new WorkDayCalculator().Calculate(startDate, count, weekends);
+
+            Assert.AreEqual(new DateTime(2017, 4, 20), result);
+        }
+        [TestMethod]
+        public void Test_EndWeekendIsEqualToStartDate()
+        {
+            DateTime startDate = new DateTime(2017, 4, 10);
+            int count = 5;
+            WeekEnd[] weekends = new WeekEnd[]
+            {
+                new WeekEnd(new DateTime(2017, 4, 3), new DateTime(2017, 4, 10))
+            };
+
+            DateTime result = new WorkDayCalculator().Calculate(startDate, count, weekends);
+
+            Assert.AreEqual(new DateTime(2017, 4, 16), result);
+        }
+        [TestMethod]
+        public void Test_StartDateBetweenStartWeekendAndEndWeekend()
+        {
+            DateTime startDate = new DateTime(2017, 4, 10);
+            int count = 5;
+            WeekEnd[] weekends = new WeekEnd[]
+            {
+                new WeekEnd(new DateTime(2017, 4, 3), new DateTime(2017, 4, 15))
+            };
+
+            DateTime result = new WorkDayCalculator().Calculate(startDate, count, weekends);
+
+            Assert.AreEqual(new DateTime(2017, 4, 20), result);
+        }
     }
 }

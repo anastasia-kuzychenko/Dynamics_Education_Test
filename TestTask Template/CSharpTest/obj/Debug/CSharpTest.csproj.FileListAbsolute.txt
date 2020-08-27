@@ -6,3 +6,11 @@ D:\CSharpProject\TestTask Template\CSharpTest\obj\Debug\CSharpTest.csproj.CoreCo
 D:\CSharpProject\TestTask Template\CSharpTest\obj\Debug\CSharpTest.csproj.CopyComplete
 D:\CSharpProject\TestTask Template\CSharpTest\obj\Debug\CSharpTest.dll
 D:\CSharpProject\TestTask Template\CSharpTest\obj\Debug\CSharpTest.pdb
+D:\Bitbucket\Dynamics_Education_Test\TestTask Template\CSharpTest\bin\Debug\CSharpTest.dll
+D:\Bitbucket\Dynamics_Education_Test\TestTask Template\CSharpTest\bin\Debug\CSharpTest.pdb
+D:\Bitbucket\Dynamics_Education_Test\TestTask Template\CSharpTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Bitbucket\Dynamics_Education_Test\TestTask Template\CSharpTest\obj\Debug\CSharpTest.csprojAssemblyReference.cache
+D:\Bitbucket\Dynamics_Education_Test\TestTask Template\CSharpTest\obj\Debug\CSharpTest.csproj.CoreCompileInputs.cache
+D:\Bitbucket\Dynamics_Education_Test\TestTask Template\CSharpTest\obj\Debug\CSharpTest.csproj.CopyComplete
+D:\Bitbucket\Dynamics_Education_Test\TestTask Template\CSharpTest\obj\Debug\CSharpTest.dll
+D:\Bitbucket\Dynamics_Education_Test\TestTask Template\CSharpTest\obj\Debug\CSharpTest.pdb
